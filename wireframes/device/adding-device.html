@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Adding New Device</title>
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div id="#wrap">
+	<div class="row">
+		<div class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+						<a class="navbar-brand" href="#">YUKTIX</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="row"></div>		<!-- extra space after toolbar -->
+
+
+<div class="row">
+	<div class="container">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class=row>
+						<div class="panel panel-default">
+								<div class="panel-body">
+									<h3>Adding Device</h3>
+									<label>Name</label>
+									<input type="text" class="form-control" placeholder="please enter your device name" data-var="@input-color">
+									<p class="help-block">for example: <code>Ardino Uno</code></p>        
+									<label>Manufacturer</label>
+									<input type="text" class="form-control" placeholder="please enter the manufacturer's name" data-var="@input-bg">
+									<p class="help-block">for example: <code> SparkFun Electronics</code></p>
+									<label>Description</label>
+									<textarea id ="description" type="text" class="form-control" placeholder="please tell us something about your device" data-var="@input-border"></textarea>
+									<p class="help-block">for example: <code>specifications,model number</code> etc.</p>
+									<h4>Variables</h4>
+									<label>Name</label>
+									<input type="text" class="form-control" placeholder="please enter name of the input variable" data-var="@input-color">        
+									<label>Type</label>
+									<input type="text" class="form-control" placeholder="please enter the type of variable" data-var="@input-bg">
+									<p class="help-block">for example: <code> Temperature</code></p>
+									<div class="radio-inline">
+										<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Variable</label>
+									</div>
+									<div class="radio-inline">
+										<label><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" checked>Device</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Add New Variable / Device </button>
+									<button type="submit" class="btn btn-primary">Submit</button>
+									<hr>
+									<ol id="variable-list">
+										<li><a>variable 1</a></li>
+										<li><a>variable 2</a></li>
+									</ol>
+								</div>
+						</div>         
+				</div>
+			</div>
+			<div class="col-lg-2"></div>
+	</div>
+</div>
+<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">© Company<a href="www.yuktix.com"> Yuktix</a>
+      </div>
+</div>
+<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

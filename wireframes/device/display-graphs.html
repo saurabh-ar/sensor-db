@@ -2,12 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sign-in page</title>
+<title>Display Chart</title>
 <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
+<div id="wrap">
 	<div class="row">
 		<div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
@@ -27,40 +28,56 @@
 	</div>
 
 <div class="row"></div>		<!-- extra space after toolbar -->
-
-
 <div class="row">
-	<div class="container">
 			<div class="col-lg-2"></div>
 			<div class="col-lg-8">
-				<form class="form-signin">
-						<h2 class="form-signin-heading">Please sign in</h2>
-						<h4>You can use your existing Gmail or Facebook account to sign in.</h4>
-							<div id="openid_highlight">
-								<a title="log in with Google" href="#" style="background: #fff url(/assets/bootstrap/css/openid-logos.png); background-position: -1px -1px" class="google openid_large_btn"></a>
-								<a title="log in with Facebook" href="#" style="background: #fff url(/assets/bootstrap/css/openid-logos.png); background-position: -1px -456px" class="facebook openid_large_btn"></a>
-							</div>
-				</form>
+				<div class="panel panel-default">
+						<div class="panel-body">
+							<div id="chart_div1"></div>
+						</div>
+				</div>
 			</div>
+			
 			<div class="col-lg-2"></div>
-	</div>
 </div>
 
-<div class="row">
-		<nav class="navbar navbar-default navbar-fixed-bottom">
-		<div id="footer">
-			<p class="text-muted credit">
-				© Company<a href="www.yuktix.com"> Yuktix</a>
-			</p>
-		</div>
-	</nav>
 </div>
-
-
-
-
-
+<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">© Company<a href="www.yuktix.com"> Yuktix</a>
+      </div>
+</div>
+<script src="/assets/bootstrap/js/jsapi.JS"></script>
 <script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {
+		packages : [ "corechart" ]
+	});
+
+	google.setOnLoadCallback(drawChart);
+
+	
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([ [ 'X', 'Y' ],
+				[ '1', 20 ], [ '2', 80 ], [ '3', 5 ], [ '4', 160 ] ]);
+
+		var options = {
+			title : 'X-Y PLOT'
+		};
+		var chart = new google.visualization.LineChart(document
+				.getElementById('chart_div1'));
+		chart.draw(data, options);
+		
+		var chart = new google.visualization.AreaChart(document
+				.getElementById('chart_div2'));
+		chart.draw(data, options);
+		
+		var chart = new google.visualization.ColumnChart(document
+				.getElementById('chart_div3'));
+		chart.draw(data, options);
+		
+	}
+</script>
 </body>
 </html>
