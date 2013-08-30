@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Adding New Device</title>
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div id="#wrap">
+	<div class="row">
+		<div class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+						<a class="navbar-brand" href="#">YUKTIX</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="row"></div>		<!-- extra space after toolbar -->
+
+
+<div class="row">
+	<div class="container">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class=row>
+						<div class="panel panel-default">
+								<div class="panel-body">
+									<h3>Adding Device</h3>
+									<label>Name</label>
+									<input type="text" class="form-control" placeholder="please enter your device name" data-var="@input-color">
+								
+									<label>Manufacturer</label>
+									<input type="text" class="form-control" placeholder="please enter the manufacturer's name" data-var="@input-bg">
+									
+									<label>Description</label>
+									<textarea id ="description" type="text" class="form-control" placeholder="please tell us something about your device" data-var="@input-border"></textarea>
+								
+									<hr>
+									<h3>Variables</h3>
+									<form class="form-inline">
+									<div class="form-group" style="display:none">
+									<label>Name</label>
+									<input type="text" class="form-control" placeholder="Example : temperature" data-var="@input-color">        
+									</div>
+									<div class="form-group" style="display:none">
+									<label>Type</label>
+									<select class="input-block-level select-option">       
+										<option value="NONE">None </option> 
+										<option  value="integer">Integer</option> 
+										<option value="float">Float</option> 
+										<option value="string">String</option> 
+									</select>
+									</div>
+									
+									<div class="form-group">
+									<a id="add-btn"><span class="glyphicon glyphicon-plus-sign"></span> Add</a>
+									</div>
+									</form>
+									<hr>
+									<table class="table">
+										<thead>
+												<tr>
+													<th>Name</th>
+													<th>Type</th>
+												</tr>
+										</thead>
+										<tbody>
+												<tr>
+													<td>Temp 1</td>
+													<td><span class="pull-right glyphicon glyphicon-remove"></span>Integer</td>
+												</tr>
+												<tr>
+													<td>Temp 2</td>
+													<td><span class="pull-right glyphicon glyphicon-remove"></span>Float</td>
+												</tr>
+										</tbody>
+									</table>
+									
+									<button type="button" class="btn btn-primary">Next</button>
+								
+								</div>
+						</div>         
+				</div>
+			</div>
+			<div class="col-lg-2"></div>
+	</div>
+</div>
+	<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">© Company<a href="www.yuktix.com"> Yuktix</a>
+      </div>
+</div>
+
+<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

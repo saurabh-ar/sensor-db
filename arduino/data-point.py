@@ -21,9 +21,10 @@ def post_data_point (value) :
 
     return 
 
-ser = serial.Serial('/dev/tty.usbserial', 9600)
+ser = serial.Serial('/dev/ttyUSB0', 9600)
 while True:
     value = ser.readline()
+    print value
     post_data_point(value)
 
 # sys.exit(0)
