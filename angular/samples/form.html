@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJs form example </title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <style>
+      input { width:300px; }
+      label { width:160px; }
+
+
+  </style>
+</head>
+<body ng-controller="form1Controller">
+ 
+    <h2> Angularjs form example </h2>
+
+    {{errorMessage}}
+    <div style="padding:20px;">
+        <form name="form1" id="form1" novalidate>
+            <label>Name:</label> 
+            <input  type="text" name="name" ng-model="name" required> <br> 
+            <label>Age:&nbsp;</label> 
+            <input  type="text" name ="age" ng-model="age"> 
+            <button ng-click="addAge(age)">Add+</button>
+            <div class="list">
+                <li ng:repeat="value in ages"> {{value}} </li>
+            </div>
+
+           <button ng-click="submit()" ng-disabled="form1.$invalid || hasThreeAge()">SAVE</button>
+        </form>
+
+    </div>
+    
+    <script>
+
+        function form1Controller($scope) {
+            $scope.ages = [] ;
+            $scope.addAge = function(value) {
+                $scope.ages.push(value);
+            }
+
+            $scope.hasThreeAge = function() {
+                if($scope.ages.length < 1 ) 
+                    return true ;
+                else
+                    return false ;
+
+            }
+
+            $scope.submit = function() {
+                $scope.errorMessage = " " ;
+                if($scope.ages.length < 3 ) {
+                    $scope.errorMessage = "we need at least 3 ages!" ;
+                }
+
+                // @todo submit to backend script
+
+            }
+
+        }
+    </script>
+
+</body>
+</html>

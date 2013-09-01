@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+ 
+    <div style="padding:20px;">
+        Name:&nbsp; <input ng-model="name"> &nbsp;
+        snippet:&nbsp; <input ng-model="snippet"> &nbsp;
+        <button ng-click="add()"> Add </button>
+    </div>
+    
+    <p>Total number of phones: {{phones.length}}</p>
+
+    
+
+  <ul>
+    <li ng:repeat="phone in phones">
+      <h3> {{phone.name}} </h3>
+      <p> <a href="#" ng:click="grab(phone.id)">remove</a> </p>
+    </li>
+  </ul>
+
+    <script>
+        function PhoneListCtrl($scope) {
+
+            $scope.grab = function(id) {
+                console.log('got: ' + id );
+                for(index = 0 ; index < $scope.phones.length ; index++)
+                    if(index > id )
+                        $scope.phones[index].id = index - 1 ;
+                
+                $scope.phones.splice(id,1);
+            }
+
+            $scope.add = function() {
+                console.log($scope.name);
+                var newPhone = {};
+                newPhone.name = $scope.name ;
+                newPhone.snippet = $scope.snippet ;
+                newPhone.id = $scope.phones.length ;
+                $scope.phones.push(newPhone);
+            }
+
+
+            $scope.phones = [
+            {
+                "name": "Nexus S",
+                "id" : 0,
+                "snippet": "Fast just got faster with Nexus S."
+            },
+            {
+                "name": "Motorola XOOM™ with Wi-Fi",
+                "id" : 1,
+                "snippet": "The Next, Next Generation tablet."
+            },
+            {
+                "name": "MOTOROLA XOOM™",
+                "id" : 2,
+                "snippet": "The Next, Next Generation tablet."
+            },
+            { "name" : "Nokia Lumia 620",
+               "id" : 3,
+              "snippet" : "cheap windows phone"
+            }
+          ];
+        }
+
+
+    </script>
+
+</body>
+</html>
