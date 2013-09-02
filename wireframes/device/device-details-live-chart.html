@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>device-equal-to-one</title>
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div id="wrap">
+	<div class="row">
+		<div class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+						<a class="navbar-brand" href="#">YUKTIX</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="row"></div>	<!-- extra space after toolbar -->
+	
+	
+	<div class="row">
+	
+			<div class="col-lg-1">&nbsp;</div>
+
+			<div class="col-lg-2">
+
+				<div class="bs-sidebar hidden-print affix" role="complementary"
+					style="">
+					<ul class="nav bs-sidenav">
+						<li><a href="#">Dashboard</a>
+							<ul class="nav"></ul></li>
+						<li class="active"><a href="#">Devices </a></li>
+						<li class="#"><a href="#">Account </a></li>
+						<li class="#"><a href="#">Link 1 </a></li>
+						<li class="#"><a href="#">Link 2 </a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="mar-top panel panel-default">
+					<div class="panel-body">
+							<div class="pull-right">
+							<span><a href="#">	Edit</a></span>
+							</div>
+							<br> <br>
+							<div class="container text-muted">
+											<p>Device : 001</p>
+											<p>Manufacturer: Yuktix</p>
+											<p>Serial no: XYZ001 </p>
+											<p>Description: Its a temperature sensing device</p>
+											<b>Resistance values:</b>
+											<p>254, 443, 534, 876</p>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<div id="chart_div1"></div>
+							</div>
+				</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-lg-4"></div>
+
+		</div>
+
+	</div>
+<div id="footer">
+	      <div class="container">
+	        <p class="text-muted credit">© Company<a href="www.yuktix.com"> Yuktix</a>
+	      </div>
+</div>
+
+					
+					
+<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/bootstrap/js/jsapi.JS"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {
+		packages : [ "corechart" ]
+	});
+
+	google.setOnLoadCallback(drawChart);
+
+	
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([ [ 'time','Resistance' ],
+				[ '1',254 ], [ '2',443 ], [ '3', 534 ], [ '4', 876 ] ]);
+
+		var options = {
+			title : 'resistance-time plot'
+		};
+		var chart = new google.visualization.LineChart(document
+				.getElementById('chart_div1'));
+		chart.draw(data, options);
+		}
+</script>
+</body>
+</html>

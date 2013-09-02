@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <title>Adding New Device</title>
 <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
 <link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+<style>
+
+.table tbody > tr > td:first {
+border-top: 0px;
+}
+</style>
 </head>
 
 <body>
@@ -39,28 +46,28 @@
 								<div class="panel-body">
 									<h3>Adding Device</h3>
 									<label>Name</label>
-									<input type="text" class="form-control" placeholder="please enter your device name" data-var="@input-color">
+									<input type="text" class="form-control" placeholder="" data-var="@input-color">
 								
 									<label>Manufacturer</label>
-									<input type="text" class="form-control" placeholder="please enter the manufacturer's name" data-var="@input-bg">
+									<input type="text" class="form-control" placeholder="" data-var="@input-bg">
 									
 									<label>Description</label>
-									<textarea id ="description" type="text" class="form-control" placeholder="please tell us something about your device" data-var="@input-border"></textarea>
+									<textarea id ="description" type="text" class="form-control" placeholder=""></textarea>
 								
-									<hr>
+									
 									<h3>Variables</h3>
 									<form class="form-inline">
 									<div class="form-group" style="display:none">
-									<label>Name</label>
+									
 									<input type="text" class="form-control" placeholder="Example : temperature" data-var="@input-color">        
 									</div>
 									<div class="form-group" style="display:none">
-									<label>Type</label>
+									
 									<select class="input-block-level select-option">       
-										<option value="NONE">None </option> 
-										<option  value="integer">Integer</option> 
-										<option value="float">Float</option> 
-										<option value="string">String</option> 
+										
+										<option  value="integer">Number</option> 
+										<option value="float">String</option> 
+										<option value="string">Binary</option> 
 									</select>
 									</div>
 									
@@ -68,27 +75,23 @@
 									<a id="add-btn"><span class="glyphicon glyphicon-plus-sign"></span> Add</a>
 									</div>
 									</form>
-									<hr>
+									<br>
 									<table class="table">
-										<thead>
-												<tr>
-													<th>Name</th>
-													<th>Type</th>
-												</tr>
-										</thead>
 										<tbody>
 												<tr>
 													<td>Temp 1</td>
-													<td><span class="pull-right glyphicon glyphicon-remove"></span>Integer</td>
+													<td>Number</td>
+													<td><a href="#">remove</a></td>
 												</tr>
 												<tr>
 													<td>Temp 2</td>
-													<td><span class="pull-right glyphicon glyphicon-remove"></span>Float</td>
+													<td>String</td>
+													<td><a href="#">remove</a></td>
 												</tr>
 										</tbody>
 									</table>
 									
-									<button type="button" class="btn btn-primary">Next</button>
+									<button type="button" class="btn btn-success btn-lg">Next</button>
 								
 								</div>
 						</div>         
