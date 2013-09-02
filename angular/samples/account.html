@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJs Yuktix account example </title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <style>
+      input { width:300px; }
+      label { width:160px; }
+
+
+  </style>
+</head>
+<body ng-controller="form1Controller">
+ 
+    <h2> Angularjs form example </h2>
+
+    <div> {{status}} </div>
+    <div> {{data.accountId}} </div>
+    <div> {{data}} </div>
+
+    <div style="padding:20px;">
+        <form name="form1" id="form1" novalidate>
+            <label> Account Name:</label> 
+            <input  type="text" name="name" ng-model="name" required> <br> 
+
+           <button ng-click="submit()" ng-disabled="form1.$invalid">SAVE</button>
+        </form>
+
+    </div>
+    
+    <script>
+
+        function form1Controller($scope,$http) {
+
+            $scope.method = 'POST' ;
+            $scope.url = 'http://localhost/angular/php/account.php' ;
+
+            $scope.submit = function() {
+                $scope.status = null;
+                $scope.data = null;
+ 
+                var postData = { "name" : $scope.name } ;
+
+                $http({
+                        url: $scope.url, 
+                        method: $scope.method,
+                        data : postData,
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    }).
+                  success(function(data, status) {
+                    $scope.status = status;
+                    $scope.data = data;
+                  }).
+                  error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                });
+
+            }
+
+        }
+    </script>
+
+</body>
+</html>

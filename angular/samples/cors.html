@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>CORS example </title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body ng-controller="PageCtrl">
+ 
+    <div style="padding:20px;">
+        Name:&nbsp; <input ng-model="token"> &nbsp;
+        <button ng-click="send()">send token</button>
+    </div>
+    
+    <p>server response: {{data}}</p>
+    <p>response code: {{status}}</p>
+
+    
+
+    <script>
+        function PageCtrl($scope,$http, $templateCache) {
+
+            $scope.method = 'POST' ;
+            $scope.url = 'http://localhost/php/cors.php' ;
+
+            $scope.send = function() {
+                console.log("send token " + $scope.token);
+                $scope.status = null;
+                $scope.data = null;
+ 
+                var postData = { "token" : $scope.token } ;
+
+                $http({
+                        url: $scope.url, 
+                        method: $scope.method,
+                        data : postData,
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    }).
+                  success(function(data, status) {
+                    $scope.status = status;
+                    $scope.data = data;
+                  }).
+                  error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                });
+            };
+
+        }
+
+
+    </script>
+
+</body>
+</html>
