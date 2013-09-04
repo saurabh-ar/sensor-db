@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add New Device</title>
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="row">
+		<div class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+						<a class="navbar-brand" href="#">YUKTIX</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+<div class="row">
+	<div class="container">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class=row>
+						<div class="create-device panel panel-default">
+								<div class="panel-body">
+									<h3>Add Device</h3>
+									<label>Name</label>
+									<input type="text" class="form-control" placeholder="" data-var="@input-color">
+								
+									<label>Manufacturer</label>
+									<input type="text" class="form-control" placeholder="" data-var="@input-bg">
+									
+									<label>Description</label>
+									<textarea id ="description" type="text" class="form-control" placeholder=""></textarea>
+								
+									
+									<h3>Variables</h3>
+									<form class="form-inline">
+									<div class="form-group" style="display:none">
+									
+									<input type="text" class="form-control" placeholder="Example : temperature" data-var="@input-color">        
+									</div>
+									<div class="form-group" style="display:none">
+									
+									<select class="input-block-level select-option">       
+										
+										<option  value="integer">Number</option> 
+										<option value="float">String</option> 
+										<option value="string">Binary</option> 
+									</select>
+									</div>
+									
+									<div class="form-group">
+									<a id="add-btn"><span class="glyphicon glyphicon-plus-sign"></span> Add</a>
+									</div>
+									</form>
+									<br>
+									<table class="mar-20px-top table">
+										<tbody>
+												<tr>
+													<td class="no-top-border">Temp 1</td>
+													<td class="no-top-border">Number</td>
+													<td class="no-top-border"><a href="#">remove</a></td>
+												</tr>
+												<tr>
+													<td>Temp 2</td>
+													<td>String</td>
+													<td><a href="#">remove</a></td>
+												</tr>
+										</tbody>
+									</table>
+									
+									<button type="button" class="btn btn-inverse long-btn">Next</button>
+								</div>
+						</div>         
+				</div>
+			</div>
+			<div class="col-lg-2"></div>
+	</div>
+</div>
+<div class="row">
+		<div id="footer">
+			<div class="col-lg-10 col-lg-offset-1">
+				<ul  class="list-inline">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Hardware</a></li>
+					<li><a href="#">Contact</a></li>
+					
+				</ul>
+			 	
+			</div>
+		</div>
+	</div>
+	
+
+
+
+<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Basic Template</title>
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+
+<style>
+
+#form-message {
+color: red;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="row">
+	<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+					<a class="navbar-brand" href="#">YUKTIX</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+	</div>
+</div>
+
+<div class="row"></div>	<!-- extra space after toolbar -->
+
+
+<div class="row">
+	<div class="container">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+			 <div id="form-message"> </div>
+			 <form  id="form1"  name="form1" action="#"  method="POST">
+			
+     			 <form class="form-signin">
+      			  <h2 class="form-signin-heading">Please sign in</h2>
+        			<input type="text" name="name" class="form-control" placeholder="Name" autofocus="">
+        			<input type="text" name="age" class="form-control" placeholder="Age">
+        			<input type="text" name="address" class="form-control" placeholder="Address">
+      				  <br>
+       				 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      			</form>
+			</form>		
+			
+			
+			
+			</div>
+			<div class="col-lg-2"></div>
+	</div>
+</div>
+<div id="footer">
+	      <div class="container">
+	        <p class="text-muted credit">© Company<a href="www.yuktix.com"> Yuktix</a>
+	      </div>
+</div>
+
+
+<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/bootstrap/js/jquery.validate.js"></script>
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+                $("#form1").validate({
+                    errorLabelContainer: $("#form-message"),
+                    onkeyup : false,
+                    rules: {
+                        name: {required: true } ,
+                        email: {required: true, email: true } ,
+                        unit_price: {required: true } ,
+                        quantity: {required: true } ,
+                        age: {digits:true} ,
+                        address:{required:true} ,
+                    },
+                    messages: {
+                        name: {required: "Name is required" },
+                        email: {required: " Email (Buyer) is required"},
+                        unit_price: {required: " Unit price is required"},
+                        quantity: {required: " Quantity is required"} ,
+                        age: {digits: " only number is allowed"} ,
+                        address:{required: " address is required !"} ,
+                    }
+                });
+
+            });
+        
+        </script>
+</body>
+</html>
