@@ -90,17 +90,10 @@ select,textarea {
 }
 
 .form-signin .openid_large_btn {
-	width: 100px;
-	height: 60px;
-	border: 2px solid #DDD;
-	border-right: 2px solid #ccc;
-	border-bottom: 2px solid #ccc;
+	width: 136px;
+	height: 55px;
 	margin: 3px;
 	float: left;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	box-shadow: 2px 2px 4px #ddd;
-	-webkit-box-shadow: 2px 2px 4px #ddd;
 }
 
 #chart_div1 {
@@ -252,4 +245,165 @@ bs-sidebar.affix {
 
 #center-button-2 {
 	text-align: center;
+}
+
+/* fixed minimum height of content in column*/
+.col-lg-8 {
+min-height: 510px;
+}
+/* fixed minimum height of content in column*/
+
+
+/* flat buttons */
+
+.btn.btn-inverse {
+background-color: #34495e;
+}
+.btn.btn-large {
+font-size: 16.996px;
+line-height: 20px;
+padding: 12px 18px 13px;
+width:35%;
+}
+.btn {
+border: none;
+background: #bdc3c7;
+color: #ffffff;
+padding: 9px 12px 10px;
+line-height: 22px;
+text-decoration: none;
+text-shadow: none;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-transition: 0.25s;
+-moz-transition: 0.25s;
+-o-transition: 0.25s;
+transition: 0.25s;
+-webkit-backface-visibility: hidden;
+}
+.btn, .btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+font-size: 14.994px;
+font-weight: 500;
+}
+
+.center-long-btn {
+width: 30%;
+margin-left: 251px;
+}
+.long-btn {
+	width:25%;
+}
+.long-btn-action {
+font-size: 14.996px;
+line-height: 20px;
+width: 200%;
+padding: 8px 9px 8px;
+}
+/* flat buttons */
+
+/*table top row-no border*/
+.table tbody > tr > td.no-top-border {
+	border-top: none;
+}
+/*table top row-no border*/
+
+/*remove header bottom */
+.no-border-bottom {
+border-bottom: 0px;
+}
+
+.action-wrapper {
+margin-top: 20px;
+}
+/*remove header bottom */
+
+
+
+   #overlay-message {
+        background: none repeat scroll 0 0 #ffc;;
+        border-bottom: 1px solid #cc9;
+        font-size: 13px;
+        line-height: 21px;
+        left: 0;
+        opacity: 0;
+        padding: 10px 10% 10px;
+        position: fixed;
+        /* overlay.top should match body.padding-top */
+        top: 50px;
+        width: 100%;
+        z-index: 1009;
+        height:50px;
+        text-align:center ;
+        opacity :1 ;
+        display :block ; 
+    }
+
+    #overlay-message a {
+        color: #222;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: normal;
+    }
+#close-overlay .glyphicon{
+margin-top:10px;
+}
+
+
+/*sign-in form*/
+.new-acc-form.form-signin {
+width: 345px;
+margin-left: 199px;
+margin-top: 100px;
+}
+.new-acc-form.form-control {
+margin-bottom:5px;
+}
+/*sign-in form*/
+
+/*upper margin of table */
+.mar-20px-top.table {
+width: 100%;
+margin-bottom: 20px;
+margin-top: 20px;
+}
+/*upper margin of table */
+
+
+.create-device.panel {
+margin-top: 25px;
+}
+
+.bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
+font-weight: bold;
+color: #563d7c;
+background-color: transparent;
+}
+
+.mar-left-40.col-lg-8 {
+margin-left: 40px;
+}
+.err-msg {
+padding: 5px;
+margin-bottom: 20px;
+border: 1px solid tomato;
+border-radius: 4px;
+margin-top: 20px;
+}
+
+
+.pull-little-right {
+margin-left:200px;
+margin-top: 0px;
+}
+
+.no-list-style {
+list-style:none;
+}
+
+.mar-top.col-lg-6 {
+	margin-top:40px;
 }

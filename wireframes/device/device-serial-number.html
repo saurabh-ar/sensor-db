@@ -3,103 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <title>Device-serial-number</title>
-<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
-<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet"media="screen">
+<link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet"media="screen">
+<link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet"media="screen">
 </head>
-
 <body>
-	<div id="wrap">
-		<div class="row">
-			<div class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".navbar-collapse"></button>
-						<a class="navbar-brand" href="#">YUKTIX</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav">
-							<li><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
+	<div class="row">
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse"></button>
+					<a class="navbar-brand" href="#">YUKTIX</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
-
-		<div class="row"></div>
-		<!-- extra space after toolbar -->
-
-
+	</div>
+	<div id="overlay-message">
 		<div class="row">
-			<div class="container">
-				<div class="col-lg-2"></div>
-				<div class="col-lg-8">
-					<div class="container">
-						<div class=row>
+			<div class="col-lg-7">
+				<span>Device saved to template</span><br>
+				<a class="pull-little-right">Learn more</a>
+			</div>
+			<div class="col-lg-5">
+				<span class="pull-right"> <a id="close-overlay" href="#"><span
+						class="glyphicon glyphicon-remove"></span></a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="container">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class="container">
+					<div class=row>
 
-							<p class="text-muted">
-								
-								Device saved to template
-							</p>
-							
-							<br> <br>
-							<form class="form-inline">
-								<div class="form-group">
-									<label>Serial number</label> <input type="text"
-										class="form-control" placeholder="XYZ123"
-										data-var="@input-color"> 
-								</div>
-								<div class="form-group">
-								<button type="button" class="btn btn-success">Save</button>
-								</div>
-								</form>
-								<div class="panel panel-default">
-  									<div class="panel-body">
-  										<a href="#" class="pull-right">Edit</a>
-										<div class="container">
-											<p>Device001</p>
-											<p>Yuktix</p>
-											<p>Its a temperature sensing device</p>
-											<table class="table">
-												<tbody>
-												<tr>
-													<td>Temp 1</td>
-													<td>Number</td>
-												</tr>
-												<tr>
-													<td>Temp 2</td>
-													<td>String</td>
-												</tr>
-												</tbody>
-											</table>
-										</div>
-  								
-  									</div>
-  								</div>
-								
-								
-						
+						<br> <br>
+						<form class="form-inline">
+							<div class="form-group">
+								<label>Serial number</label> <input type="text"
+									class="form-control" placeholder="XYZ123"
+									data-var="@input-color">
+							</div>
+							<div class="form-group">
+								<button type="button" class="btn btn-inverse long-btn-action">Save</button>
+							</div>
+						</form>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<a href="#" class="pull-right">Edit</a>
+								<ul class="no-list-style">
+									<li>Device001</li>
+									<li>Yuktix</li>
+									<li>Its a temperature sensing device</li>
+								</ul>
+								<table class="table">
+									<tbody>
+										<tr>
+											<td class="no-top-border">Temp 1</td>
+											<td class="no-top-border">Number</td>
+										</tr>
+										<tr>
+											<td>Temp 2</td>
+											<td>String</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-2"></div>
 			</div>
 		</div>
-
+		<div class="col-lg-2"></div>
 	</div>
-	<div id="footer">
-		<div class="container">
-			<p class="text-muted credit">
-				© Company<a href="www.yuktix.com"> Yuktix</a>
+	<div class="row">
+		<div id="footer">
+			<div class="col-lg-10 col-lg-offset-1">
+				<ul class="list-inline">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Hardware</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-
-
-
 	<script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
 	<script src="/assets/bootstrap/js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#close-overlay").click(function() {
+				$("#overlay-message").css("display", "none");
+			});
+
+		});
+	</script>
+
 </body>
 </html>
