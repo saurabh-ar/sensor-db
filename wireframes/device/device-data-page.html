@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>device-equal-to-one</title>
+<title>device-data-page</title>
 <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="/assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
 <link href="/assets/bootstrap/css/sensor-db.css" rel="stylesheet" media="screen">
@@ -27,10 +27,6 @@
 				</div>
 		</div>
 	</div>
-
-	<div class="row"></div>	<!-- extra space after toolbar -->
-	
-	
 	<div class="row">
 	
 			<div class="col-lg-1">&nbsp;</div>
@@ -72,13 +68,9 @@
 									<div id="chart_div1"></div>
 							</div>
 				</div>
-
 			</div>
 			<div class="col-lg-4"></div>
-
 		</div>
-
-
 <div class="row">
 		<div id="footer">
 			<div class="col-lg-10 col-lg-offset-1">
@@ -94,8 +86,6 @@
 			</div>
 		</div>
 </div>
-					
-					
 <script src="/assets/bootstrap/js/jquery-2.0.3.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.js"></script>
 <script src="/assets/bootstrap/js/jsapi.JS"></script>
@@ -103,16 +93,13 @@
 	google.load("visualization", "1", {
 		packages : [ "corechart" ]
 	});
-
 	google.setOnLoadCallback(drawChart);
-
-	
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([ [ 'time','Resistance' ],
 				[ '1',254 ], [ '2',443 ], [ '3', 534 ], [ '4', 876 ] ]);
-
 		var options = {
-			title : 'resistance-time plot'
+			legend: {position: 'bottom', textStyle: {fontSize: 14}}, 
+		title : 'time plot'
 		};
 		var chart = new google.visualization.LineChart(document
 				.getElementById('chart_div1'));
